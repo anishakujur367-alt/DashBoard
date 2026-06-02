@@ -51,23 +51,23 @@ export default function CourseCard({ course }: CourseCardProps) {
         {/* Header containing Category, Icon & Status */}
         <div className="flex items-start justify-between">
           <div className="space-y-1">
-            <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-text-muted">
               {course.category}
             </span>
-            <h3 className="text-base font-bold text-white group-hover:text-violet-300 transition-colors duration-300 leading-snug pr-4">
+            <h3 className="text-base font-bold text-text-primary group-hover:text-violet-400 transition-colors duration-300 leading-snug pr-4">
               {course.title}
             </h3>
           </div>
 
           <div
-            className={`w-10 h-10 rounded-xl bg-slate-950/80 border border-slate-800/80 flex items-center justify-center ${course.textColor} shadow-md`}
+            className={`w-10 h-10 rounded-xl bg-slate-base/80 border border-card-border flex items-center justify-center ${course.textColor} shadow-md`}
           >
             {getCourseIcon(course.iconName, "w-5 h-5")}
           </div>
         </div>
 
         {/* Course specs */}
-        <div className="flex gap-4 mt-4 text-xs font-semibold text-slate-400">
+        <div className="flex gap-4 mt-4 text-xs font-semibold text-text-secondary">
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
             <span>{course.status}</span>
@@ -80,16 +80,16 @@ export default function CourseCard({ course }: CourseCardProps) {
       {/* Progress Section */}
       <div className="mt-8">
         <div className="flex justify-between items-end mb-2">
-          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+          <span className="text-xs font-bold text-text-muted uppercase tracking-wider">
             Syllabus Mastery
           </span>
-          <span className="text-sm font-extrabold text-white">
+          <span className="text-sm font-extrabold text-text-primary">
             {course.progress}%
           </span>
         </div>
 
         {/* Premium high performance progress bar */}
-        <div className="h-2 w-full bg-slate-950/80 rounded-full overflow-hidden border border-slate-900 relative">
+        <div className="h-2 w-full bg-slate-base rounded-full overflow-hidden border border-card-border relative">
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: course.progress / 100 }}
@@ -100,7 +100,7 @@ export default function CourseCard({ course }: CourseCardProps) {
         </div>
 
         {/* Footer trigger link */}
-        <div className="mt-5 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-white transition-colors duration-300">
+        <div className="mt-5 flex items-center justify-between text-xs font-bold text-text-secondary group-hover:text-text-primary transition-colors duration-300">
           <span>Resume Curriculum</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
         </div>

@@ -34,16 +34,16 @@ export default function DeadlinesTile() {
       <div className="absolute top-0 right-0 w-60 h-60 bg-teal-600/5 rounded-full blur-[80px] pointer-events-none -z-10" />
 
       {/* Header Info */}
-      <div className="flex justify-between items-center border-b border-slate-800/60 pb-5 mb-5">
+      <div className="flex justify-between items-center border-b border-card-border pb-5 mb-5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
             <Calendar className="w-5 h-5 text-teal-400" />
           </div>
           <div>
-            <h2 className="text-base font-extrabold text-white">
+            <h2 className="text-base font-extrabold text-text-primary">
               Academic Deadlines
             </h2>
-            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-0.5">
+            <p className="text-[11px] font-bold text-text-muted uppercase tracking-wider mt-0.5">
               Task Checklist
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function DeadlinesTile() {
                   ? "bg-emerald-950/10 border-emerald-500/20 opacity-80"
                   : isUrgent
                   ? "bg-rose-950/10 border-rose-500/20 hover:border-rose-500/40"
-                  : "bg-slate-900/55 border-slate-800/80 hover:border-slate-700/80"
+                  : "bg-slate-base/55 border-card-border hover:border-text-secondary"
               }`}
             >
               <div className="flex items-center gap-3 min-w-0">
@@ -80,7 +80,7 @@ export default function DeadlinesTile() {
                       ? "text-emerald-400 hover:text-emerald-500"
                       : isUrgent
                       ? "text-rose-400 hover:text-rose-500"
-                      : "text-slate-500 hover:text-slate-400"
+                      : "text-text-muted hover:text-text-secondary"
                   }`}
                 >
                   {isDone ? (
@@ -99,11 +99,11 @@ export default function DeadlinesTile() {
                       opacity: isDone ? 0.5 : 1,
                     }}
                     transition={{ duration: 0.3 }}
-                    className="text-xs font-bold text-white tracking-wide truncate"
+                    className="text-xs font-bold text-text-primary tracking-wide truncate"
                   >
                     {item.title}
                   </motion.h4>
-                  <p className="text-[10px] text-slate-500 font-semibold truncate mt-0.5">
+                  <p className="text-[10px] text-text-muted font-semibold truncate mt-0.5">
                     {item.courseTitle}
                   </p>
                 </div>
@@ -117,13 +117,13 @@ export default function DeadlinesTile() {
                       ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                       : isUrgent
                       ? "bg-rose-500/10 text-rose-400 border border-rose-500/20"
-                      : "bg-slate-950 text-slate-400 border border-slate-800"
+                      : "bg-slate-base text-text-secondary border border-card-border"
                   }`}
                 >
                   {item.dueDate}
                 </span>
 
-                <span className="text-[10px] font-extrabold text-slate-400">
+                <span className="text-[10px] font-extrabold text-text-secondary">
                   +{item.xpReward} XP
                 </span>
               </div>

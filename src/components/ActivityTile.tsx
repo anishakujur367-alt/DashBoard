@@ -14,7 +14,7 @@ export default function ActivityTile() {
   const getLevelColor = (level: number) => {
     switch (level) {
       case 0:
-        return "bg-slate-900 border border-slate-950/40 hover:bg-slate-800/80";
+        return "bg-slate-base/80 border border-card-border hover:bg-slate-base";
       case 1:
         return "bg-violet-950/40 border border-violet-900/35 hover:bg-violet-900/50 shadow-[0_0_8px_rgba(139,92,246,0.1)]";
       case 2:
@@ -24,7 +24,7 @@ export default function ActivityTile() {
       case 4:
         return "bg-violet-500 border border-violet-400/50 hover:bg-violet-400 shadow-[0_0_16px_rgba(139,92,246,0.4)]";
       default:
-        return "bg-slate-900";
+        return "bg-slate-base";
     }
   };
 
@@ -55,22 +55,22 @@ export default function ActivityTile() {
       <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-violet-600/5 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       {/* Header Info */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/60 pb-5 mb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-card-border pb-5 mb-5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
             <Activity className="w-5 h-5 text-violet-400" />
           </div>
           <div>
-            <h2 className="text-base font-extrabold text-white">
+            <h2 className="text-base font-extrabold text-text-primary">
               Weekly Learning Velocity
             </h2>
-            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-0.5">
+            <p className="text-[11px] font-bold text-text-muted uppercase tracking-wider mt-0.5">
               Heatmap & Study trends
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4 text-xs font-semibold text-slate-400">
+        <div className="flex items-center gap-4 text-xs font-semibold text-text-secondary">
           <div className="flex items-center gap-1.5">
             <TrendingUp className="w-4 h-4 text-emerald-400" />
             <span>+24% Productivity</span>
@@ -83,16 +83,16 @@ export default function ActivityTile() {
         {/* Left Side: SVG Curved Line Chart */}
         <div className="lg:col-span-5 flex flex-col justify-between h-full">
           <div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
+            <div className="text-xs font-bold text-text-muted uppercase tracking-wider mb-3">
               Performance Curve
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-black text-white tracking-tight">84.5h</span>
+              <span className="text-2xl font-black text-text-primary tracking-tight">84.5h</span>
               <span className="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
                 +4.2h this week
               </span>
             </div>
-            <p className="text-slate-400 text-xs mt-1">
+            <p className="text-text-secondary text-xs mt-1">
               Active learning curve based on focus records.
             </p>
           </div>
@@ -140,10 +140,10 @@ export default function ActivityTile() {
         {/* Right Side: GitHub Style Heatmap Grid */}
         <div className="lg:col-span-7 flex flex-col justify-between h-full relative">
           <div className="flex justify-between items-center mb-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <span className="text-xs font-bold text-text-muted uppercase tracking-wider">
               Contribution Heatmap
             </span>
-            <div className="flex items-center gap-1 text-[10px] text-slate-500">
+            <div className="flex items-center gap-1 text-[10px] text-text-muted">
               <Info className="w-3.5 h-3.5" />
               <span>Scroll grid on mobile</span>
             </div>
@@ -181,10 +181,10 @@ export default function ActivityTile() {
                       top: hoveredPosition.y,
                       transform: "translateX(-50%)",
                     }}
-                    className="absolute z-20 pointer-events-none bg-slate-950 border border-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold shadow-2xl flex flex-col gap-0.5 whitespace-nowrap"
+                    className="absolute z-20 pointer-events-none bg-slate-base border border-card-border text-text-primary px-3 py-1.5 rounded-lg text-[10px] font-bold shadow-2xl flex flex-col gap-0.5 whitespace-nowrap"
                   >
-                    <span className="text-slate-400">{hoveredDay.date}</span>
-                    <span className="text-violet-300 font-extrabold">
+                    <span className="text-text-secondary">{hoveredDay.date}</span>
+                    <span className="text-violet-400 font-extrabold">
                       {hoveredDay.count} XP Study Logs
                     </span>
                   </motion.div>
@@ -194,11 +194,11 @@ export default function ActivityTile() {
           </div>
 
           {/* Heatmap Legend */}
-          <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-800/40 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+          <div className="flex items-center justify-between mt-4 pt-4 border-t border-card-border text-[10px] font-bold text-text-muted uppercase tracking-wider">
             <span>Inactive</span>
             <div className="flex items-center gap-1.5 select-none">
               <span className="text-[10px] mr-1">Less</span>
-              <div className="w-2.5 h-2.5 rounded-[3px] bg-slate-900 border border-slate-950/40" />
+              <div className="w-2.5 h-2.5 rounded-[3px] bg-slate-base border border-card-border" />
               <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-950/40 border border-violet-900/35" />
               <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-850/60 border border-violet-700/40" />
               <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-600/70 border border-violet-500/50" />

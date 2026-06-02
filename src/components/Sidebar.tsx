@@ -109,7 +109,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   // ----------------------------------------------------
   return (
     <nav
-      className={`relative h-screen shrink-0 border-r border-slate-800/80 bg-sidebar-bg/95 flex flex-col justify-between py-6 px-4 z-30 transition-all duration-300 ease-out select-none ${
+      className={`relative h-screen shrink-0 border-r border-card-border bg-sidebar-bg flex flex-col justify-between py-6 px-4 z-30 transition-all duration-300 ease-out select-none ${
         isCollapsed ? "w-20" : "w-64"
       }`}
     >
@@ -143,7 +143,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
                 className={`w-full relative flex items-center gap-3 py-3 px-3.5 rounded-xl cursor-pointer transition-colors duration-300 group ${
-                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
+                  isActive ? "text-text-primary" : "text-text-secondary hover:text-text-primary"
                 }`}
               >
                 {/* Active tab spring slider */}
@@ -161,7 +161,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
 
                 <div
                   className={`transition-transform duration-300 group-hover:scale-110 ${
-                    isActive ? "text-violet-400" : "text-slate-400 group-hover:text-slate-300"
+                    isActive ? "text-violet-400" : "text-text-secondary group-hover:text-text-primary"
                   }`}
                 >
                   {getIcon(item.iconName, "w-5 h-5")}
@@ -189,10 +189,10 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
       {/* Footer Controls */}
       <div className="space-y-4">
         {/* Divider */}
-        <div className="h-px bg-slate-800/60 mx-1" />
+        <div className="h-px bg-card-border mx-1" />
 
         {/* Log Out Button */}
-        <button className="w-full flex items-center gap-3 py-3 px-3.5 rounded-xl text-slate-400 hover:text-rose-400 cursor-pointer transition-colors duration-300 group">
+        <button className="w-full flex items-center gap-3 py-3 px-3.5 rounded-xl text-text-secondary hover:text-rose-400 cursor-pointer transition-colors duration-300 group">
           <div className="transition-transform duration-300 group-hover:translate-x-0.5">
             <LogOut className="w-5 h-5" />
           </div>
@@ -215,7 +215,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         <div className="hidden lg:block">
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="w-full flex items-center justify-center p-2 rounded-lg bg-slate-900/50 hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700/80 text-slate-400 hover:text-slate-200 transition-all duration-300 cursor-pointer"
+            className="w-full flex items-center justify-center p-2 rounded-lg bg-slate-base/50 hover:bg-slate-base border border-card-border hover:border-text-secondary text-text-secondary hover:text-text-primary transition-all duration-300 cursor-pointer"
           >
             {isCollapsed ? (
               <ChevronRight className="w-4 h-4" />

@@ -69,14 +69,14 @@ export default function BentoGrid({ user, courses }: BentoGridProps) {
         className="lg:col-span-12 md:col-span-2 col-span-1 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4"
       >
         <div>
-          <h2 className="text-xl font-black text-white tracking-tight">
+          <h2 className="text-xl font-black text-text-primary tracking-tight">
             Curriculum Enrollment
           </h2>
-          <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mt-0.5">
+          <p className="text-text-muted text-xs font-semibold uppercase tracking-wider mt-0.5">
             Overview of your active training metrics
           </p>
         </div>
-        <div className="h-px bg-slate-800/60 grow mx-6 hidden sm:block" />
+        <div className="h-px bg-card-border grow mx-6 hidden sm:block" />
         <span className="text-xs font-bold text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full uppercase tracking-wider shrink-0 select-none">
           {courses.length} ACTIVE CURRICULUMS
         </span>
