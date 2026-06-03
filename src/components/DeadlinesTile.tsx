@@ -5,8 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, CheckCircle2, Circle, AlertCircle, Sparkles } from "lucide-react";
 import { mockDeadlines, Deadline } from "@/data/mockData";
 
-export default function DeadlinesTile() {
-  const [deadlines, setDeadlines] = useState<Deadline[]>(mockDeadlines);
+interface DeadlinesTileProps {
+  initialDeadlines?: Deadline[];
+}
+
+export default function DeadlinesTile({ initialDeadlines = [] }: DeadlinesTileProps) {
+  // Use live DB deadlines when available; fall back to mock data for local dev / empty tables
+  const seedData: Deadline[] = initialDeadlines.length > 0 ? initialDeadlines : mockDeadlines;
+  const [deadlines, setDeadlines] = useState<Deadline[]>(seedData);
   const [completedXp, setCompletedXp] = useState<number | null>(null);
   const [xpPos, setXpPos] = useState<{ x: number; y: number } | null>(null);
 
