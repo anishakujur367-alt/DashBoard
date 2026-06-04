@@ -83,7 +83,7 @@ export default function BentoGrid({ user, students, isError = false, isLoading =
           </p>
         </div>
         <div className="h-px bg-card-border grow mx-6 hidden sm:block" />
-        <span className="text-xs font-bold text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full uppercase tracking-wider shrink-0 select-none">
+        <span className="text-xs font-bold text-accent-violet bg-violet-500/10 border border-violet-500/20 px-3 py-1 rounded-full uppercase tracking-wider shrink-0 select-none">
           {students.length} ENROLLED STUDENTS
         </span>
       </motion.div>
@@ -95,7 +95,7 @@ export default function BentoGrid({ user, students, isError = false, isLoading =
           variants={itemVariants}
           className="lg:col-span-12 md:col-span-2 col-span-1 p-6 rounded-2xl glass-panel bg-rose-500/5 border-rose-500/20 flex flex-col sm:flex-row sm:items-center gap-4 text-left shadow-lg shadow-rose-950/10"
         >
-          <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-accent-rose shrink-0">
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div>
@@ -104,11 +104,11 @@ export default function BentoGrid({ user, students, isError = false, isLoading =
             </h4>
             <p className="text-xs text-text-secondary mt-1 max-w-2xl leading-relaxed">
               Unable to reach the Supabase backend service. Please check that you have configured 
-              <code className="mx-1 px-1.5 py-0.5 rounded bg-slate-base/80 border border-card-border text-rose-300 font-mono text-[10px]">
+              <code className="mx-1 px-1.5 py-0.5 rounded bg-slate-base/80 border border-card-border text-accent-rose font-mono text-[10px]">
                 NEXT_PUBLIC_SUPABASE_URL
               </code> 
               and 
-              <code className="mx-1 px-1.5 py-0.5 rounded bg-slate-base/80 border border-card-border text-rose-300 font-mono text-[10px]">
+              <code className="mx-1 px-1.5 py-0.5 rounded bg-slate-base/80 border border-card-border text-accent-rose font-mono text-[10px]">
                 NEXT_PUBLIC_SUPABASE_ANON_KEY
               </code> 
               correctly inside your local environment configuration.
@@ -132,7 +132,7 @@ export default function BentoGrid({ user, students, isError = false, isLoading =
           variants={itemVariants}
           className="lg:col-span-12 md:col-span-2 col-span-1 p-6 rounded-2xl glass-panel bg-violet-500/5 border-card-border flex flex-col sm:flex-row sm:items-center gap-4 text-left"
         >
-          <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-accent-violet shrink-0">
             <Database className="w-6 h-6" />
           </div>
           <div>
@@ -140,7 +140,7 @@ export default function BentoGrid({ user, students, isError = false, isLoading =
               Database Sync Completed
             </h4>
             <p className="text-xs text-text-secondary mt-1 max-w-2xl leading-relaxed">
-              Connected successfully to the database schema, but the <code className="text-violet-300 font-mono">students</code> table 
+              Connected successfully to the database schema, but the <code className="text-accent-violet font-mono">students</code> table 
               returned zero rows. Insert students inside your Supabase dashboard editor table to observe real-time dynamic dashboard updates.
             </p>
           </div>

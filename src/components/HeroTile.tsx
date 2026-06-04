@@ -22,7 +22,7 @@ export default function HeroTile({ user }: HeroTileProps) {
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-semibold tracking-wider text-violet-400 uppercase">
+            <span className="text-xs font-semibold tracking-wider text-violet-600 dark:text-violet-400 uppercase">
               Student Workspace
             </span>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-text-primary mt-1 leading-tight tracking-tight">
@@ -66,7 +66,7 @@ export default function HeroTile({ user }: HeroTileProps) {
         <div className="mt-8 bg-slate-base/60 border border-card-border rounded-2xl p-4.5">
           <div className="flex justify-between items-center mb-2.5">
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-cyan-400" />
+              <Award className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span className="text-xs font-bold text-text-secondary uppercase tracking-wider">
                 Level {user.level} Academics
               </span>
@@ -96,7 +96,7 @@ export default function HeroTile({ user }: HeroTileProps) {
         {/* Stat Item 1 */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
-            <Clock className="w-5 h-5 text-violet-400" />
+            <Clock className="w-5 h-5 text-violet-600 dark:text-violet-400" />
           </div>
           <div>
             <div className="text-[11px] text-text-muted font-bold uppercase tracking-wider">
@@ -111,7 +111,7 @@ export default function HeroTile({ user }: HeroTileProps) {
         {/* Stat Item 2 */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-            <BookOpen className="w-5 h-5 text-cyan-400" />
+            <BookOpen className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
           </div>
           <div>
             <div className="text-[11px] text-text-muted font-bold uppercase tracking-wider">

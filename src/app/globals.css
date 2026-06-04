@@ -14,6 +14,14 @@
   --scrollbar-track: #020617;
   --scrollbar-thumb: #1e293b;
   --scrollbar-thumb-hover: #334155;
+  
+  /* Accent Colors (Dark Mode Default) */
+  --accent-teal: #2dd4bf;
+  --accent-violet: #a78bfa;
+  --accent-cyan: #22d3ee;
+  --accent-amber: #fbbf24;
+  --accent-rose: #fb7185;
+  --accent-emerald: #34d399;
 }
 
 .light {
@@ -30,6 +38,14 @@
   --scrollbar-track: #f8fafc;
   --scrollbar-thumb: #cbd5e1;
   --scrollbar-thumb-hover: #94a3b8;
+
+  /* Accent Colors (Light Mode) */
+  --accent-teal: #0d9488;
+  --accent-violet: #7c3aed;
+  --accent-cyan: #0891b2;
+  --accent-amber: #d97706;
+  --accent-rose: #e11d48;
+  --accent-emerald: #059669;
 }
 
 @theme {
@@ -41,11 +57,12 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-slate-base: var(--slate-base);
-  --color-accent-teal: #14b8a6;
-  --color-accent-violet: #8b5cf6;
-  --color-accent-cyan: #06b6d4;
-  --color-accent-amber: #f59e0b;
-  --color-accent-rose: #f43f5e;
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-violet: var(--accent-violet);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-rose: var(--accent-rose);
+  --color-accent-emerald: var(--accent-emerald);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
@@ -130,6 +147,18 @@ body {
 /* Gradient text utilities */
 .text-glow-gradient {
   background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-logo-gradient {
+  background: linear-gradient(to right, #ffffff, #e2e8f0, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light .text-logo-gradient {
+  background: linear-gradient(to right, #0f172a, #334155, #1e293b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

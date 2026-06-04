@@ -253,7 +253,7 @@ export default function DashboardClient({
                   <GraduationCap className="w-9 h-9 text-white" />
                 </div>
 
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full border border-violet-500/20 mb-3">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-violet-600 dark:text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full border border-violet-500/20 mb-3">
                   Workspace Module
                 </span>
 

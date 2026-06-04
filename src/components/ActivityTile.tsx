@@ -16,13 +16,13 @@ export default function ActivityTile() {
       case 0:
         return "bg-slate-base/80 border border-card-border hover:bg-slate-base";
       case 1:
-        return "bg-violet-950/40 border border-violet-900/35 hover:bg-violet-900/50 shadow-[0_0_8px_rgba(139,92,246,0.1)]";
+        return "bg-violet-500/15 border border-violet-500/20 hover:bg-violet-500/25 shadow-[0_0_8px_rgba(139,92,246,0.05)]";
       case 2:
-        return "bg-violet-850/60 border border-violet-700/40 hover:bg-violet-700/60 shadow-[0_0_10px_rgba(139,92,246,0.15)]";
+        return "bg-violet-500/35 border border-violet-500/30 hover:bg-violet-500/45 shadow-[0_0_10px_rgba(139,92,246,0.1)]";
       case 3:
-        return "bg-violet-600/70 border border-violet-500/50 hover:bg-violet-500/70 shadow-[0_0_12px_rgba(139,92,246,0.25)]";
+        return "bg-violet-500/65 border border-violet-500/50 hover:bg-violet-500/75 shadow-[0_0_12px_rgba(139,92,246,0.2)]";
       case 4:
-        return "bg-violet-500 border border-violet-400/50 hover:bg-violet-400 shadow-[0_0_16px_rgba(139,92,246,0.4)]";
+        return "bg-violet-500 border border-violet-400/50 hover:bg-violet-400 shadow-[0_0_16px_rgba(139,92,246,0.3)]";
       default:
         return "bg-slate-base";
     }
@@ -58,7 +58,7 @@ export default function ActivityTile() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-card-border pb-5 mb-5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
-            <Activity className="w-5 h-5 text-violet-400" />
+            <Activity className="w-5 h-5 text-accent-violet" />
           </div>
           <div>
             <h2 className="text-base font-extrabold text-text-primary">
@@ -72,7 +72,7 @@ export default function ActivityTile() {
 
         <div className="flex items-center gap-4 text-xs font-semibold text-text-secondary">
           <div className="flex items-center gap-1.5">
-            <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <TrendingUp className="w-4 h-4 text-accent-emerald" />
             <span>+24% Productivity</span>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function ActivityTile() {
             </div>
             <div className="flex items-baseline gap-2">
               <span className="text-2xl font-black text-text-primary tracking-tight">84.5h</span>
-              <span className="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+              <span className="text-[11px] font-bold text-accent-emerald bg-emerald-500/10 px-2 py-0.5 rounded-full">
                 +4.2h this week
               </span>
             </div>
@@ -184,7 +184,7 @@ export default function ActivityTile() {
                     className="absolute z-20 pointer-events-none bg-slate-base border border-card-border text-text-primary px-3 py-1.5 rounded-lg text-[10px] font-bold shadow-2xl flex flex-col gap-0.5 whitespace-nowrap"
                   >
                     <span className="text-text-secondary">{hoveredDay.date}</span>
-                    <span className="text-violet-400 font-extrabold">
+                    <span className="text-accent-violet font-extrabold">
                       {hoveredDay.count} XP Study Logs
                     </span>
                   </motion.div>
@@ -199,9 +199,9 @@ export default function ActivityTile() {
             <div className="flex items-center gap-1.5 select-none">
               <span className="text-[10px] mr-1">Less</span>
               <div className="w-2.5 h-2.5 rounded-[3px] bg-slate-base border border-card-border" />
-              <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-950/40 border border-violet-900/35" />
-              <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-850/60 border border-violet-700/40" />
-              <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-600/70 border border-violet-500/50" />
+              <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-500/15 border border-violet-500/20" />
+              <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-500/35 border border-violet-500/30" />
+              <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-500/65 border border-violet-500/50" />
               <div className="w-2.5 h-2.5 rounded-[3px] bg-violet-500 border border-violet-400/50" />
               <span className="text-[10px] ml-1">More</span>
             </div>

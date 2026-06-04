@@ -72,14 +72,14 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
             >
               <div
                 className={`transition-colors duration-300 ${
-                  isActive ? "text-violet-400" : "text-slate-400"
+                  isActive ? "text-accent-violet" : "text-slate-400"
                 }`}
               >
                 {getIcon(item.iconName, "w-5 h-5")}
               </div>
               <span
                 className={`text-[10px] mt-0.5 font-medium transition-all duration-300 ${
-                  isActive ? "text-violet-400 opacity-100" : "text-slate-500 opacity-80"
+                  isActive ? "text-accent-violet opacity-100" : "text-slate-500 opacity-80"
                 }`}
               >
                 {item.label}
@@ -126,7 +126,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
                 transition={{ duration: 0.2 }}
-                className="text-lg font-bold bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent truncate font-sans tracking-wide"
+                className="text-lg font-bold text-logo-gradient truncate font-sans tracking-wide"
               >
                 Nova Academy
               </motion.span>
@@ -161,7 +161,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
 
                 <div
                   className={`transition-transform duration-300 group-hover:scale-110 ${
-                    isActive ? "text-violet-400" : "text-text-secondary group-hover:text-text-primary"
+                    isActive ? "text-accent-violet" : "text-text-secondary group-hover:text-text-primary"
                   }`}
                 >
                   {getIcon(item.iconName, "w-5 h-5")}
@@ -192,7 +192,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         <div className="h-px bg-card-border mx-1" />
 
         {/* Log Out Button */}
-        <button className="w-full flex items-center gap-3 py-3 px-3.5 rounded-xl text-text-secondary hover:text-rose-400 cursor-pointer transition-colors duration-300 group">
+        <button className="w-full flex items-center gap-3 py-3 px-3.5 rounded-xl text-text-secondary hover:text-rose-600 dark:hover:text-rose-400 cursor-pointer transition-colors duration-300 group">
           <div className="transition-transform duration-300 group-hover:translate-x-0.5">
             <LogOut className="w-5 h-5" />
           </div>

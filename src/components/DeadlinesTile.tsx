@@ -43,7 +43,7 @@ export default function DeadlinesTile({ initialDeadlines = [] }: DeadlinesTilePr
       <div className="flex justify-between items-center border-b border-card-border pb-5 mb-5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
-            <Calendar className="w-5 h-5 text-teal-400" />
+            <Calendar className="w-5 h-5 text-accent-teal" />
           </div>
           <div>
             <h2 className="text-base font-extrabold text-text-primary">
@@ -54,7 +54,7 @@ export default function DeadlinesTile({ initialDeadlines = [] }: DeadlinesTilePr
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-1 bg-teal-500/10 px-2.5 py-1 rounded-full border border-teal-500/20 text-[10px] font-bold text-teal-400 tracking-wider uppercase">
+        <div className="flex items-center gap-1 bg-teal-500/10 px-2.5 py-1 rounded-full border border-teal-500/20 text-[10px] font-bold text-accent-teal tracking-wider uppercase">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Earn XP</span>
         </div>
@@ -71,9 +71,9 @@ export default function DeadlinesTile({ initialDeadlines = [] }: DeadlinesTilePr
               key={item.id}
               className={`p-3.5 rounded-xl border flex items-center justify-between gap-4 transition-all duration-300 select-none ${
                 isDone
-                  ? "bg-emerald-950/10 border-emerald-500/20 opacity-80"
+                  ? "bg-emerald-500/8 dark:bg-emerald-950/10 border-emerald-500/20 opacity-80"
                   : isUrgent
-                  ? "bg-rose-950/10 border-rose-500/20 hover:border-rose-500/40"
+                  ? "bg-rose-500/8 dark:bg-rose-950/10 border-rose-500/20 hover:border-rose-500/40"
                   : "bg-slate-base/55 border-card-border hover:border-text-secondary"
               }`}
             >
@@ -83,9 +83,9 @@ export default function DeadlinesTile({ initialDeadlines = [] }: DeadlinesTilePr
                   onClick={(e) => toggleComplete(item.id, item.xpReward, e)}
                   className={`shrink-0 cursor-pointer transition-colors duration-200 ${
                     isDone
-                      ? "text-emerald-400 hover:text-emerald-500"
+                      ? "text-accent-emerald hover:text-emerald-500"
                       : isUrgent
-                      ? "text-rose-400 hover:text-rose-500"
+                      ? "text-accent-rose hover:text-rose-500"
                       : "text-text-muted hover:text-text-secondary"
                   }`}
                 >
@@ -120,9 +120,9 @@ export default function DeadlinesTile({ initialDeadlines = [] }: DeadlinesTilePr
                 <span
                   className={`text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-md tracking-wider ${
                     isDone
-                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                      ? "bg-emerald-500/10 text-accent-emerald border border-emerald-500/20"
                       : isUrgent
-                      ? "bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                      ? "bg-rose-500/10 text-accent-rose border border-rose-500/20"
                       : "bg-slate-base text-text-secondary border border-card-border"
                   }`}
                 >

@@ -13,7 +13,7 @@ const getStudentTheme = (progress: number) => {
   if (progress >= 90) {
     return {
       glowColor: "rgba(16, 185, 129, 0.15)", // Emerald
-      textColor: "text-emerald-400",
+      textColor: "text-accent-emerald",
       gradientFrom: "from-emerald-500",
       gradientTo: "to-teal-500",
       statusLabel: "Elite Status",
@@ -21,7 +21,7 @@ const getStudentTheme = (progress: number) => {
   } else if (progress >= 50) {
     return {
       glowColor: "rgba(139, 92, 246, 0.15)", // Violet
-      textColor: "text-violet-400",
+      textColor: "text-accent-violet",
       gradientFrom: "from-violet-500",
       gradientTo: "to-indigo-500",
       statusLabel: "On Track",
@@ -29,7 +29,7 @@ const getStudentTheme = (progress: number) => {
   } else {
     return {
       glowColor: "rgba(244, 63, 94, 0.15)", // Rose
-      textColor: "text-rose-400",
+      textColor: "text-accent-rose",
       gradientFrom: "from-rose-500",
       gradientTo: "to-orange-500",
       statusLabel: "Attention Req.",
@@ -71,7 +71,7 @@ export default function StudentCard({ student }: StudentCardProps) {
             <span className="text-[10px] font-extrabold uppercase tracking-wider text-text-muted">
               {theme.statusLabel}
             </span>
-            <h3 className="text-base font-extrabold text-text-primary group-hover:text-violet-400 transition-colors duration-300 leading-snug truncate">
+            <h3 className="text-base font-extrabold text-text-primary group-hover:text-accent-violet transition-colors duration-300 leading-snug truncate">
               {student.name}
             </h3>
           </div>
@@ -83,7 +83,7 @@ export default function StudentCard({ student }: StudentCardProps) {
 
         {/* Current Active Course details */}
         <div className="flex items-center gap-2 mt-4 text-xs font-semibold text-text-secondary">
-          <GraduationCap className="w-4 h-4 text-violet-400 shrink-0" />
+          <GraduationCap className="w-4 h-4 text-accent-violet shrink-0" />
           <span className="truncate pr-1">{student.course}</span>
         </div>
       </div>
