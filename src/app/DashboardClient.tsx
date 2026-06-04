@@ -8,7 +8,7 @@ import BentoGrid from "@/components/BentoGrid";
 import { mockUser, Deadline } from "@/data/mockData";
 import { Student } from "@/lib/api/students";
 import { DbUser } from "@/lib/api/users";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase/client";
 
 interface DashboardClientProps {
   initialStudents: Student[];

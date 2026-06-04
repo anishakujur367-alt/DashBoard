@@ -1,4 +1,4 @@
-import { supabase } from "../supabase";
+import { createServerClient } from "../supabase/server";
 import { Deadline } from "@/data/mockData";
 
 export interface DbDeadline {
@@ -12,11 +12,13 @@ export interface DbDeadline {
 
 /**
  * Fetch all deadlines from the "deadlines" table.
+ * Uses a fresh server-side client per request (safe for Server Components).
  * Maps snake_case DB columns → camelCase Deadline interface.
- * Returns [] silently when the table hasn't been created yet (PGRST200),
- * and logs a warning for any other unexpected errors.
+ * Returns [] silently when the table hasn't been created yet (PGRST200).
  */
 export async function getDeadlines(): Promise<Deadline[]> {
+  const supabase = createServerClient();
+
   const { data, error } = await supabase
     .from("deadlines")
     .select("id, title, course_title, due_date, xp_reward, status")
@@ -24,7 +26,6 @@ export async function getDeadlines(): Promise<Deadline[]> {
 
   if (error) {
     // PGRST200 = table/relationship not found in schema cache
-    // Treat this as "table not set up yet" — silent fallback, no crash
     if (error.code === "PGRST200" || error.message?.includes("schema cache")) {
       return [];
     }
@@ -41,4 +42,3 @@ export async function getDeadlines(): Promise<Deadline[]> {
     status: row.status,
   }));
 }
-

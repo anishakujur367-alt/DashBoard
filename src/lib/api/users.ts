@@ -1,4 +1,4 @@
-import { supabase } from "../supabase";
+import { createServerClient } from "../supabase/server";
 
 export interface DbUser {
   id: string;
@@ -15,10 +15,13 @@ export interface DbUser {
 
 /**
  * Fetch the first user row from the "users" table.
+ * Uses a fresh server-side client per request (safe for Server Components).
  * Returns null if none found.
  */
 export async function getUser(): Promise<DbUser | null> {
   try {
+    const supabase = createServerClient();
+
     const { data, error } = await supabase
       .from("users")
       .select(
@@ -28,8 +31,8 @@ export async function getUser(): Promise<DbUser | null> {
       .single();
 
     if (error) {
-      // "PGRST116" is the PostgREST "no rows" error — treat as null, not a crash
-      // "PGRST200" is relation not found error — treat as null silently
+      // "PGRST116" = no rows found — return null, not a crash
+      // "PGRST200" = relation not found in schema cache — return null silently
       if (
         error.code === "PGRST116" ||
         error.code === "PGRST200" ||
