@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Student Dashboard (Next.js + Supabase)
 
-## Getting Started
+## Overview
+This project is a modern student dashboard built using Next.js (App Router), Supabase, and Tailwind CSS. It provides insights into student progress, academic performance, and deadlines through a structured and interactive interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Architecture
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend
+- Next.js (App Router) for routing and server-side rendering
+- React Server Components for efficient data fetching
+- Tailwind CSS for styling
+- Framer Motion for animations
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Backend
+- Supabase (PostgreSQL + REST APIs)
+- Handles:
+  - Student data
+  - User dashboard data
+  - Deadlines tracking
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Server vs Client Component Strategy
 
-To learn more about Next.js, take a look at the following resources:
+### Server Components
+Used for:
+- Fetching data from Supabase
+- Initial rendering of the dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Benefits:
+- Improved performance
+- Reduced client-side JavaScript
+- Better SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### Client Components
+Used for:
+- Animations (Framer Motion)
+- Interactive UI elements
+- Dynamic visual updates
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Examples:
+- Student cards hover effects
+- Progress animations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### Component Split Strategy
+- Data fetching handled on the server
+- Interactivity handled on the client
+
+This ensures fast initial load and smooth user experience.
+
+---
+
+## Database Design
+
+### Tables
+
+#### students
+Stores classroom student data.
+
+#### users
+Stores dashboard user information:
+- name
+- xp
+- streak
+- level
+- total_xp
+- study_hours
+- courses_completed
+
+#### deadlines
+Stores academic tasks:
+- title
+- course
+- due_date
+- xp_reward
+- status
+
+---
+
+## Data Flow
+
+1. Server components fetch data from Supabase  
+2. Data is passed as props to client components  
+3. UI renders with animations and interactions  
+
+---
+
+## Challenges Faced
+
+### Hydration Errors
+- Issue: Server and client rendered different date formats  
+- Cause: use of `toLocaleDateString()`  
+- Fix: replaced with deterministic formatting using `toISOString()`  
+
+---
+
+### Supabase API Configuration
+- Issue: Missing API key errors  
+- Fix: configured environment variables:
+  - `NEXT_PUBLIC_SUPABASE_URL`
+  - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+---
+
+### Row Level Security (RLS)
+- Issue: No data returned from API  
+- Fix: added policy allowing read access:
+```sql
+using (true)
